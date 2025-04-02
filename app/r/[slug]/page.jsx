@@ -2,8 +2,8 @@ import { getRedirectUrl } from "@/lib/actions";
 import { redirect } from "next/navigation";
 
 export default async function RedirectPage({ params }) {
-  const { domain, slug } = params;
-  const result = await getRedirectUrl(slug, domain);
+  const { slug } = params;
+  const result = await getRedirectUrl(slug);
 
   if (!result.url) {
     redirect("/not-found");
